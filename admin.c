@@ -208,7 +208,6 @@ int Query_stu(int method, char* info)
 		{
 			if (strcmp(info,stu.dorm_id) == 0)
 			{
-				printf("该寝室全部学生信息如下：\n");
 				printf("%s %s %s %s %s %s %s %s\n", stu.id, stu.name, stu.phone, stu.dorm_id, stu.bed_id, stu.head_id, stu.head_name, stu.head_phone);
 				flag = 1;
 			}
@@ -219,7 +218,6 @@ int Query_stu(int method, char* info)
 		{
 			if (strcmp(info, stu.head_id) == 0)
 			{
-				printf("该寝室全部学生信息如下：\n");
 				printf("%s %s %s %s %s %s %s %s\n", stu.id, stu.name, stu.phone, stu.dorm_id, stu.bed_id, stu.head_id, stu.head_name, stu.head_phone);
 				flag = 1;
 			}
@@ -230,7 +228,6 @@ int Query_stu(int method, char* info)
 		{
 			if (strcmp(info, stu.head_phone) == 0)
 			{
-				printf("该寝室全部学生信息如下：\n");
 				printf("%s %s %s %s %s %s %s %s\n", stu.id, stu.name, stu.phone, stu.dorm_id, stu.bed_id, stu.head_id, stu.head_name, stu.head_phone);
 				flag = 1;
 			}
@@ -241,7 +238,6 @@ int Query_stu(int method, char* info)
 		{
 			if (strcmp(info, stu.id) == 0)
 			{
-				printf("该学生信息如下：\n");
 				printf("%s %s %s %s %s %s %s %s\n", stu.id, stu.name, stu.phone, stu.dorm_id, stu.bed_id, stu.head_id, stu.head_name, stu.head_phone);
 				flag = 1;
 			}

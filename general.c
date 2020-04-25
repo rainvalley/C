@@ -12,7 +12,7 @@ int Update_info(char* id,char* old_password,char* new_password)
 	FILE* fp = fopen("user.txt", "r+");
 	FILE* fp_temp = fopen("temp.txt", "w+");
 	char id_temp[15];
-	char password_temp[32];
+	char password_temp[65];
 	int permission;
 	int flag=0;
 	while (fscanf(fp, "%s %s %d", id_temp, password_temp, &permission) != -1)
