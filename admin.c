@@ -1,6 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 #include<string.h>
+#include<errno.h>
 #include"admin.h"
 
 struct student {
@@ -22,17 +23,17 @@ int Check_permission(char* id, char* password,int type)
 	0为管理员，1为普通用户
 	当id，password正确并且permission通过校验时，返回1，否则返回0
 	*/
-	FILE* fp = fopen("user.txt", "r");
+	FILE* fp = fopen("user.txt", "r+");
 	char true_id[15];
 	char true_password[65];//将正确的id，password存入缓存区
 	int permission;
-	while (!feof(fp))
+	while (fscanf(fp, "%s %s %d", true_id, true_password, &permission)!=-1)
 	{
-		fscanf(fp, "%s %s %d", true_id,true_password,&permission);
 		if ((!strcmp(id,true_id))&&(!strcmp(password,true_password)))//id与password校验正确
 		{
 			if (permission == type)//权限校验正确
 			{
+				fclose(fp);//这是一个巨坑，草。
 				return 1;
 			}
 		}
@@ -46,7 +47,7 @@ int Check_permission(char* id, char* password,int type)
 void Create_general_user(char* id, char* password)
 {
 	//创建普通用户
-	FILE* fp = fopen("user.txt", "a");
+	FILE* fp = fopen("user.txt", "a+");
 	fprintf(fp, "%s %s 1\n", id, password);//创建普通用户时，权限默认设定为1
 	fclose(fp);
 }
@@ -78,6 +79,7 @@ int Delete_general_user(char* id)
 	fclose(fp_temp);//关闭文件
 	remove("user.txt");//删除源文件
 	rename("temp.txt", "user.txt");//将temp重命名为user
+	return errno;
 }
 
 

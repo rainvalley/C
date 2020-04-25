@@ -1,3 +1,10 @@
+/*
+	2020.4.25第一版：
+	1，学生住宿信息注册与更改无法使用
+	2，hash函数的实现未添加
+	3，对输入信息的判断未编写完成
+	4，expand文件内的函数未编写
+*/
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 #include<stdlib.h>
@@ -42,11 +49,11 @@ int main()
 		printf("密码校验正确\n");
 		if (select==0)
 		{
-			admin_model(id);
+			admin_model(id);//进入管理员模块
 		}
 		else
 		{
-			general_model(id);
+			general_model(id);//进入普通用户模块
 		}
 	}
 	else
@@ -66,11 +73,11 @@ void admin_model(char* id)
 	scanf("%d", &select);
 	if (select==1)
 	{
-		admin_model_user();
+		admin_model_user();//进入管理员的用户管理
 	}
 	else if (select==2)
 	{
-		admin_model_user();
+		admin_model_stu();//进入管理员的住宿信息管理
 	}
 	else
 	{
@@ -97,6 +104,7 @@ void admin_model_user()
 			Create_general_user(id, password);
 			break;
 		case 2:
+			Delete_general_user("2098");
 			printf("请输入需要删除的用户ID\n");
 			scanf("%s", id);
 			printf("%s", id);
@@ -130,13 +138,14 @@ void admin_model_stu()
 		scanf("%d", &select);
 		switch (select)
 		{
+		//这俩还不能用
 		case 1:
-			printf("请输入需要创建的学生详细信息，包括学号，姓名，电话号码，宿舍号，寝室长学号，寝室长姓名，寝室长电话\n");
+			printf("请输入需要创建的学生详细信息，包括学号，姓名，电话号码，宿舍号，床位号，寝室长学号，寝室长姓名，寝室长电话\n");
 			scanf("%s %s %s %s %s %s %s %s\n", stu.id, stu.name, stu.phone, stu.dorm_id, stu.bed_id, stu.head_id, stu.head_name, stu.head_phone);
 			Create_stu(stu);
 			break;
 		case 2:
-			printf("请输入需要创建的学生详细信息，包括学号，姓名，电话号码，宿舍号，寝室长学号，寝室长姓名，寝室长电话\n");
+			printf("请输入需要更新的学生详细信息，包括学号，姓名，电话号码，宿舍号，床位号，寝室长学号，寝室长姓名，寝室长电话\n");
 			scanf("%s %s %s %s %s %s %s %s\n", stu.id, stu.name, stu.phone, stu.dorm_id, stu.bed_id, stu.head_id, stu.head_name, stu.head_phone);
 			Update_stu(stu);
 			break;
@@ -168,23 +177,27 @@ void admin_model_stu()
 void general_model(char* id)
 {
 	int select;
-	printf("=============================\n");
-	printf("欢迎%s\n", id);
-	printf("请选择您需要管理的信息：\n1-用户信息\t2-住宿信息\t3-退出程序\n");
-	printf("=============================\n");
-	if (select == 1)
+	while (1)
 	{
-		general_model_user(id);
+		printf("=============================\n");
+		printf("欢迎%s\n", id);
+		printf("请选择您需要管理的信息：\n1-用户信息\t2-住宿信息\t3-退出程序\n");
+		printf("=============================\n");
+		scanf("%d", &select);
+		if (select == 1)
+		{
+			general_model_user(id);//进入普通用户的用户管理系统
+		}
+		else if (select == 2)
+		{
+			general_model_stu();//进入普通用户的住宿信息管理管理
+		}
+		else
+		{
+			exit(0);
+		}
+		}
 	}
-	else if (select == 2)
-	{
-		general_model_stu();
-	}
-	else
-	{
-		exit(0);
-	}
-}
 
 void general_model_user(char* id)
 {
@@ -198,11 +211,32 @@ void general_model_user(char* id)
 	}
 	else
 	{
-		printf("原始密码错误，密码未修改成功");
+		printf("原始密码错误，密码未修改成功\n");
 	}
 	
 }
 void general_model_stu()
 {
-
+	int select;
+	int method;
+	char info[15];
+	char dorm_id[10];
+	printf("=============================\n");
+	printf("请选择您需要管理的信息：\n1-查询学生住宿信息\t2-浏览宿舍入住情况\t3-退出程序\n");
+	printf("=============================\n");
+	scanf("%d", &select);
+	switch (select)
+	{
+	case 1:
+		printf("请输入查询方法与相关信息：\n暂定四种查询方法：1-按宿舍号精确查找，2-按寝室长学号查找，3-按寝室长电话查找，4-按照学生本人学号查询\n");
+		scanf("%d %s", &method, info);
+		printf("您查询的学生信息如下：\n");
+		Query_stu(method, info);
+		break;
+	case 2:
+		printf("请输入你需要查找的宿舍信息：\n");
+		scanf("%s", dorm_id);
+		printf("您查绚的宿舍入住情况如下：\n");
+		Check_dorm(dorm_id);
+	}
 }
