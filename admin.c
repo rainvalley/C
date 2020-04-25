@@ -24,7 +24,7 @@ int Check_permission(char* id, char* password,int type)
 	*/
 	FILE* fp = fopen("user.txt", "r");
 	char true_id[15];
-	char true_password[32];//将正确的id，password存入缓存区
+	char true_password[65];//将正确的id，password存入缓存区
 	int permission;
 	while (!feof(fp))
 	{
@@ -53,13 +53,14 @@ void Create_general_user(char* id, char* password)
 
 
 //测试通过
-void Delete_general_user(char* id)
+int Delete_general_user(char* id)
 {
 	//删除普通用户，借助temp.txt拷贝，删除，重命名
+	int flag = 0;
 	FILE* fp = fopen("user.txt", "r+");
 	FILE* fp_temp = fopen("temp.txt", "w+");
 	char id_temp[15];
-	char password_temp[32];
+	char password_temp[65];
 	int permission;
 	//文件结尾重复打印，此处需要修改为其他判定方法，已修正。
 	while (fscanf(fp, "%s %s %d", id_temp, password_temp, &permission)!=-1)
@@ -67,6 +68,10 @@ void Delete_general_user(char* id)
 		if (strcmp(id,id_temp)!=0)
 		{
 			fprintf(fp_temp,"%s %s %d\n",id_temp,password_temp,permission);
+		}
+		else if (strcmp(id,id_temp)==0)
+		{
+			flag = 1;
 		}
 	}
 	fclose(fp);
@@ -84,9 +89,8 @@ void Reset_password(char* id)
 	FILE* fp = fopen("user.txt", "r+");
 	FILE* fp_temp = fopen("temp.txt", "w+");
 	char id_temp[15];
-	char password_temp[32];
+	char password_temp[65];
 	int permission;
-	//文件结尾重复打印，此处需要修改为其他判定方法
 	while (fscanf(fp, "%s %s %d", id_temp, password_temp, &permission) != -1)
 	{
 		if (strcmp(id, id_temp) != 0)
@@ -106,19 +110,21 @@ void Reset_password(char* id)
 }
 
 
-//
+//测试通过
 void Create_stu(struct student stu)
 {
 	//创建并写入学生信息
-	FILE* fp = fopen("user.txt", "w+");
+	FILE* fp = fopen("data.txt", "a+");
 	fprintf(fp, "%s %s %s %s %s %s %s %s\n",stu.id,stu.name,stu.phone,stu.dorm_id,stu.bed_id,stu.head_id,stu.head_name,stu.head_phone );
 	fclose(fp);
 }
 
 
-void Update_stu(struct student stu)
+//测试通过
+int Update_stu(struct student stu)
 {
-	//更新学生信息
+	//更新学生信息，当寻找到该学生返回1，否则返回0
+	int flag = 0;
 	struct student temp;//暂存缓冲区变量
 	FILE* fp = fopen("data.txt", "r+");
 	FILE* fp_temp = fopen("temp.txt", "w+");
@@ -132,12 +138,14 @@ void Update_stu(struct student stu)
 		else if (strcmp(temp.id, stu.id) == 0)//当缓冲区学号与形参学号相同时，将更新的内容写入到fp_temp
 		{
 			fprintf(fp_temp, "%s %s %s %s %s %s %s %s\n", stu.id, stu.name, stu.phone, stu.dorm_id, stu.bed_id, stu.head_id, stu.head_name, stu.head_phone);
+			flag = 1;
 		}
 	}
 	fclose(fp);
 	fclose(fp_temp);
 	remove("data.txt");//删除源文件
 	rename("temp.txt", "data.txt");//将temp重命名为data
+	return flag;
 }
 
 
@@ -158,7 +166,6 @@ void Delete_stu(char* id)
 	struct student stu;
 	FILE* fp = fopen("data.txt", "r+");
 	FILE* fp_temp = fopen("temp.txt", "w+");
-	//文件结尾重复打印，此处需要修改为其他判定方法
 	while (fscanf(fp, "%s %s %s %s %s %s %s %s", stu.id, stu.name, stu.phone, stu.dorm_id, stu.bed_id, stu.head_id, stu.head_name, stu.head_phone) != -1)
 	{
 		if (strcmp(id, stu.id) != 0)//将与查询学号id无关的学生信息写入fp_temp
@@ -234,12 +241,13 @@ int Query_stu(int method, char* info)
 		{
 			if (strcmp(info, stu.id) == 0)
 			{
-				printf("该寝室全部学生信息如下：\n");
+				printf("该学生信息如下：\n");
 				printf("%s %s %s %s %s %s %s %s\n", stu.id, stu.name, stu.phone, stu.dorm_id, stu.bed_id, stu.head_id, stu.head_name, stu.head_phone);
 				flag = 1;
 			}
 		};
 	}
+	fclose(fp);
 	return flag;
 }
 
@@ -263,4 +271,5 @@ void View_data()
 	{
 		printf("%s %s %s %s %s %s %s %s\n", stu.id, stu.name, stu.phone, stu.dorm_id, stu.bed_id, stu.head_id, stu.head_name, stu.head_phone);
 	}
+	fclose(fp);
 }
