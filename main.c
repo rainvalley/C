@@ -20,6 +20,10 @@ void admin_model_stu();//管理员的住宿信息管理模块
 void general_model(char* id);//普通用户管理模块
 void general_model_user(char* id);//普通用户用户信息管理模块
 void general_model_stu();//普通用户住宿信息管理模块
+char* hash(char* str);//HASH函数处理密码
+char sha256[65];//全局变量，储存Hash后的内容
+
+
 struct student {
 	char id[15];
 	char name[5];
@@ -32,7 +36,8 @@ struct student {
 };
 
 int main()
-{
+{	
+	puts(hash("abc"));
 	struct student stu;
 	int select;
 	char id[15];
@@ -61,6 +66,11 @@ int main()
 		printf("密码或ID输入错误，请重新输入\n");
 	}
 
+}
+
+char* hash(char* str)
+{
+	return(hash_original(str, sizeof(str) - 1, sha256));
 }
 
 void admin_model(char* id)
@@ -138,15 +148,15 @@ void admin_model_stu()
 		scanf("%d", &select);
 		switch (select)
 		{
-		//这俩还不能用
+		//这俩还不能用，已修正，删除\n
 		case 1:
 			printf("请输入需要创建的学生详细信息，包括学号，姓名，电话号码，宿舍号，床位号，寝室长学号，寝室长姓名，寝室长电话\n");
-			scanf("%s %s %s %s %s %s %s %s\n", stu.id, stu.name, stu.phone, stu.dorm_id, stu.bed_id, stu.head_id, stu.head_name, stu.head_phone);
+			scanf("%s %s %s %s %s %s %s %s", stu.id, stu.name, stu.phone, stu.dorm_id, stu.bed_id, stu.head_id, stu.head_name, stu.head_phone);
 			Create_stu(stu);
 			break;
 		case 2:
 			printf("请输入需要更新的学生详细信息，包括学号，姓名，电话号码，宿舍号，床位号，寝室长学号，寝室长姓名，寝室长电话\n");
-			scanf("%s %s %s %s %s %s %s %s\n", stu.id, stu.name, stu.phone, stu.dorm_id, stu.bed_id, stu.head_id, stu.head_name, stu.head_phone);
+			scanf("%s %s %s %s %s %s %s %s", stu.id, stu.name, stu.phone, stu.dorm_id, stu.bed_id, stu.head_id, stu.head_name, stu.head_phone);
 			Update_stu(stu);
 			break;
 		case 3:
