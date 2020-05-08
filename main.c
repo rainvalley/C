@@ -138,11 +138,12 @@ void admin_model_stu()
 	char* info[15];
 	char id[15];
 	char password[65];
+	char year[5];
 	struct student stu;
 	while (1)
 	{
 		printf("=============================\n");
-		printf("请选择您需要管理的信息：\n1-输入学生住宿信息\t2-更新学生住宿信息\t3-删除学生住宿信息\t4-查询住宿信息\t5-浏览宿舍信息\t6-退出程序\n");
+		printf("请选择您需要管理的信息：\n1-输入学生住宿信息\t2-更新学生住宿信息\t3-删除学生住宿信息\t4-查询住宿信息\t5-浏览宿舍信息\t6-删除毕业生信息\n7-退出程序\n");
 		printf("=============================\n");
 		scanf("%d", &select);
 		switch (select)
@@ -174,6 +175,11 @@ void admin_model_stu()
 			View_data();
 			break;
 		case 6:
+			printf("请输入毕业生入学年份（学号前四位）\n");
+			scanf("%s", year);
+			Del_graduated(year);
+			break;
+		case 7:
 			exit(0);
 			break;
 		}
