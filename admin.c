@@ -101,7 +101,7 @@ void Reset_password(char* id)
 		}
 		else
 		{
-			fprintf(fp_temp, "%s serdtijkhgf %d\n", id_temp,permission);
+			fprintf(fp_temp, "%s %s %d\n", id_temp,hash("serdtijkhgf"),permission);
 		}
 	}
 	fclose(fp);

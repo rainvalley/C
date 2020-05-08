@@ -5,6 +5,11 @@
 	3，对输入信息的判断未编写完成
 	4，expand文件内的函数未编写
 */
+
+/*
+	2020.5.8第二版：
+	基本功能已完善，待优化界面，正在开发WPF应用。
+*/
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 #include<stdlib.h>
@@ -110,7 +115,7 @@ void admin_model_user()
 		case 1:
 			printf("请输入需要创建的用户ID与密码\n");
 			scanf("%s %s", id, password);
-			Create_general_user(id, password);
+			Create_general_user(id, hash(password));
 			break;
 		case 2:
 			Delete_general_user("2098");
