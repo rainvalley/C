@@ -37,7 +37,6 @@ struct student {
 
 int main()
 {	
-	puts(hash("abc"));
 	struct student stu;
 	int select;
 	char id[15];
@@ -49,7 +48,7 @@ int main()
 	scanf("%d", &select);
 	printf("请输入用户ID与密码\n");
 	scanf("%s %s", id, password);
-	if (Check_permission(id,password,select))
+	if (Check_permission(id,hash(password),select))
 	{
 		printf("密码校验正确\n");
 		if (select==0)
