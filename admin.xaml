@@ -1,0 +1,13 @@
+﻿<Window x:Class="宿舍管理系统_WPF.admin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:宿舍管理系统_WPF"
+        mc:Ignorable="d"
+        Title="管理员管理" Height="450" Width="800">
+	<Grid>
+		<Label Content="欢迎！" HorizontalAlignment="Left" Margin="350,32,0,0" VerticalAlignment="Top" Width="42"/>
+
+	</Grid>
+</Window>

@@ -1,0 +1,26 @@
+﻿<Window x:Class="宿舍管理系统_WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:宿舍管理系统_WPF"
+        mc:Ignorable="d"
+        Title="宿舍管理系统" Height="450" Width="800" WindowStyle="SingleBorderWindow" ResizeMode="NoResize">
+    <Grid RenderTransformOrigin="0.494,0.505" FocusManager.FocusedElement="{Binding ElementName=user}">
+        <Label Content="欢迎使用学生宿舍管理系统" HorizontalAlignment="Left" Margin="274,28,0,0" VerticalAlignment="Top" Width="254" Height="37" FontSize="20px"/>
+        <Button Content="登录&#xD;&#xA;" HorizontalAlignment="Left" Margin="165,335,0,0" VerticalAlignment="Top" Width="124" Height="39" Click="Button_Login" FontSize="25px" IsDefault="True"/>
+        <Button Content="退出" HorizontalAlignment="Left" Margin="516,335,0,0" VerticalAlignment="Top" Width="124
+				" Height="39" Click="Button_exit" FontSize="25px" />
+        <TextBlock HorizontalAlignment="Left" Margin="247,124,0,0" TextWrapping="Wrap" Text="账号" FontSize="15px" VerticalAlignment="Top" Height="22" Width="42" RenderTransformOrigin="1.031,0.455"/>
+        <TextBlock HorizontalAlignment="Left" Margin="247,182,0,0" TextWrapping="Wrap" Text="密码" FontSize="15px" VerticalAlignment="Top" Height="22" Width="42" RenderTransformOrigin="1.031,0.455"/>
+        <TextBox x:Name="user" HorizontalAlignment="Left" Height="25" Margin="315,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="199"/>
+        <PasswordBox x:Name="password" HorizontalAlignment="Left" Margin="315,182,0,0" VerticalAlignment="Top" Width="199" Height="25" RenderTransformOrigin="0.437,-0.72"/>
+        <ComboBox Name="box" HorizontalAlignment="Left" Margin="315,239,0,0" VerticalAlignment="Top" Width="140" RenderTransformOrigin="0.63,0.887" SelectionChanged="ComboBox_SelectionChanged" >
+            <ComboBoxItem >管理员</ComboBoxItem>
+            <ComboBoxItem IsSelected="True">用户</ComboBoxItem>
+        </ComboBox>
+        <Label Content="身份" FontSize="15px" HorizontalAlignment="Left" Margin="247,231,0,0" VerticalAlignment="Top"/>
+
+
+    </Grid>
+</Window>
