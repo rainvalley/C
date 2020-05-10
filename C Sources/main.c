@@ -25,8 +25,6 @@ void admin_model_stu();//管理员的住宿信息管理模块
 void general_model(char* id);//普通用户管理模块
 void general_model_user(char* id);//普通用户用户信息管理模块
 void general_model_stu();//普通用户住宿信息管理模块
-char* hash(char* str);//HASH函数处理密码
-char sha256[65];//全局变量，储存Hash后的内容
 
 
 struct student {
@@ -42,6 +40,7 @@ struct student {
 
 int main()
 {	
+	printf("%s\n", hash("abc"));
 	struct student stu;
 	int select;
 	char id[15];
@@ -70,11 +69,6 @@ int main()
 		printf("密码或ID输入错误，请重新输入\n");
 	}
 
-}
-
-char* hash(char* str)
-{
-	return(hash_original(str, sizeof(str) - 1, sha256));
 }
 
 void admin_model(char* id)

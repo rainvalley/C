@@ -11,7 +11,8 @@
 #define SHA256_E1(x) (SHA256_ROTL(x,26)^SHA256_ROTL(x,21)^SHA256_ROTL(x,7))
 #define SHA256_O0(x) (SHA256_ROTL(x,25)^SHA256_ROTL(x,14)^SHA256_SR(x,3))
 #define SHA256_O1(x) (SHA256_ROTL(x,15)^SHA256_ROTL(x,13)^SHA256_SR(x,10))
-extern char* hash_original(const char* str, long long length,char* sha256) {
+char sha256[65];
+extern char* hash(const char* str) {
     /*
     计算字符串SHA-256
     参数说明：
@@ -20,6 +21,7 @@ extern char* hash_original(const char* str, long long length,char* sha256) {
     sha256         用于保存SHA-256的字符串指针
     返回值为参数sha256
     */
+    int length = sizeof(str) - 1;
     char* pp, * ppend;
     long l, i, W[64], T1, T2, A, B, C, D, E, F, G, H, H0, H1, H2, H3, H4, H5, H6, H7;
     H0 = 0x6a09e667, H1 = 0xbb67ae85, H2 = 0x3c6ef372, H3 = 0xa54ff53a;

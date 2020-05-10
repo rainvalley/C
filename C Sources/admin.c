@@ -48,7 +48,7 @@ void Create_general_user(char* id, char* password)
 {
 	//创建普通用户
 	FILE* fp = fopen("user.txt", "a+");
-	fprintf(fp, "%s %s 1\n", id, password);//创建普通用户时，权限默认设定为1
+	fprintf(fp, "%s %s 1\n", id, hash(password));//创建普通用户时，权限默认设定为1
 	fclose(fp);
 }
 
