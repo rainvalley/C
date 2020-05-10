@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:宿舍管理系统_WPF"
         mc:Ignorable="d"
-        Title="普通用户管理" Height="450" Width="800">
+        Title="用户页面" Height="450" Width="800" ResizeMode="NoResize">
     <Grid>
-		<Label Content="欢迎" HorizontalAlignment="Left" Margin="341,39,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.547,-0.087"/>
+		<Label Content="欢迎" HorizontalAlignment="Left" Margin="341,39,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.547,-0.087" FontSize="20px"/>
 	</Grid>
 </Window>

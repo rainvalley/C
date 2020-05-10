@@ -5,9 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:宿舍管理系统_WPF"
         mc:Ignorable="d"
-        Title="管理员管理" Height="450" Width="800">
-	<Grid>
-		<Label Content="欢迎！" HorizontalAlignment="Left" Margin="350,32,0,0" VerticalAlignment="Top" Width="42"/>
+        Title="管理员页面" Height="450" Width="800" ResizeMode="NoResize">
+    <Grid>
+        <Label Content="选择您需要管理的信息类型：" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="371" FontSize="20px"/>
+        <ComboBox Name="typebox" HorizontalAlignment="Left" Margin="24,77,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="typeboxchanged"/>
+        <Label Content="选择您需要管理的具体信息：" HorizontalAlignment="Left" Margin="10,175,0,0" VerticalAlignment="Top" Width="301" FontSize="20px"/>
+        <ComboBox Name="infobox" HorizontalAlignment="Left" Margin="24,288,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="infoboxchanged"/>
+        <TextBlock FontSize="15px" HorizontalAlignment="Left" Margin="497,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="111" Height="21"><Run Text="用户信息输入："/><LineBreak/><Run/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="387,81,0,0" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top" Height="17"/>
+        <TextBlock HorizontalAlignment="Left" Margin="538,79,0,0" TextWrapping="Wrap" Text="密码" VerticalAlignment="Top" RenderTransformOrigin="-0.175,0.604" Height="19"/>
+        <Button Content="提交" HorizontalAlignment="Left" Margin="709,79,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.96,0.734"/>
+        <TextBox Name="ID" HorizontalAlignment="Left" Height="18" Margin="405,80,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
+        <TextBox Name="passwd" HorizontalAlignment="Left" Height="18" Margin="567,80,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="passwd_TextChanged"/>
 
-	</Grid>
+    </Grid>
 </Window>

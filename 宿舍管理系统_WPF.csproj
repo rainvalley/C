@@ -113,9 +113,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="hdImg_04933c033414655faa30be2f37c6799c1586873594511.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\hdImg_04933c033414655faa30be2f37c6799c1586873594511.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
