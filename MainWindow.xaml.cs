@@ -30,10 +30,6 @@ namespace 宿舍管理系统_WPF
         public MainWindow()
         {
             InitializeComponent();
-            //直接跳转admin页面
-            //admin newpage = new admin();
-            //newpage.Show();
-            //this.Close();
         }
         private void Button_Login(object sender, RoutedEventArgs e)
         {
