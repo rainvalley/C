@@ -20,7 +20,7 @@
 # 环境
 * Visual Studio 2019 Community (V142)
 * Win10 1809 64bit
-* Target Platform —— X86 
+* Target Platform:X86 
 # 文件
 ## 源文件
 * main.c 主函数位置，程序主体逻辑处理
