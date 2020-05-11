@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Runtime.InteropServices;
+using System.IO;
 
 namespace 宿舍管理系统_WPF
 {
@@ -38,9 +39,8 @@ namespace 宿舍管理系统_WPF
         [DllImport("sys.dll", CallingConvention = CallingConvention.Cdecl)]
         public static extern void Del_graduated(string year);
 
-
         string[] user=new string[] {"创建账号","删除账号","重置账号" };
-        string[] stu = new string[] { "新建住宿信息", "更新住宿信息", "删除住宿信息", "删除毕业生信息" };
+        string[] stu = new string[] { "新建住宿信息", "更新住宿信息", "删除住宿信息", "删除毕业生信息" ,"浏览宿舍信息"};
         public admin()
         {
             InitializeComponent();
@@ -67,7 +67,7 @@ namespace 宿舍管理系统_WPF
             else if (typebox.SelectedIndex == 1)
             {
                 infobox.Items.Clear();
-                for (int i = 0; i < 4; i++)
+                for (int i = 0; i < 5; i++)
                 {
                     infobox.Items.Add(stu[i]);
                 }
@@ -109,6 +109,9 @@ namespace 宿舍管理系统_WPF
                         break;
                     case 3:
                         type = 6;
+                        break;
+                    case 4:
+                        type = 7;
                         break;
                 }
             }
@@ -163,6 +166,22 @@ namespace 宿舍管理系统_WPF
                 case 6:
                     Del_graduated(year.Text);
                     MessageBox.Show("毕业生已删除");
+                    break;
+                case 7:
+                    FileStream fs = new FileStream(@"data.txt", FileMode.Open, FileAccess.Read, FileShare.Read);
+                    StreamReader sr = new StreamReader(fs);
+                    string line = sr.ReadLine();
+                    while (line != null)
+                    {
+                        MessageBox.Show(line);
+                        line = sr.ReadLine();
+                    }
+                    /*string[] strs = str.Split(' ');
+                    foreach (string item in strs)
+                    {
+                        MessageBox.Show(item);
+                    }*/
+                    fs.Close();
                     break;
             }
         }
