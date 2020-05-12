@@ -17,3 +17,5 @@ C:\Users\HuYadong\source\repos\宿舍管理系统_WPF\宿舍管理系统_WPF\obj
 C:\Users\HuYadong\source\repos\宿舍管理系统_WPF\宿舍管理系统_WPF\obj\Debug\general.g.cs
 C:\Users\HuYadong\source\repos\宿舍管理系统_WPF\宿舍管理系统_WPF\obj\Debug\admin.baml
 C:\Users\HuYadong\source\repos\宿舍管理系统_WPF\宿舍管理系统_WPF\obj\Debug\general.baml
+C:\Users\HuYadong\source\repos\宿舍管理系统_WPF\宿舍管理系统_WPF\obj\Debug\check.g.cs
+C:\Users\HuYadong\source\repos\宿舍管理系统_WPF\宿舍管理系统_WPF\obj\Debug\check.baml

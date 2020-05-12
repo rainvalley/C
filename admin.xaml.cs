@@ -40,7 +40,7 @@ namespace 宿舍管理系统_WPF
         public static extern void Del_graduated(string year);
         //导出C的DLL与函数
         string[] user=new string[] {"创建账号","删除账号","重置账号" };
-        string[] stu = new string[] { "新建住宿信息", "更新住宿信息", "删除住宿信息", "删除毕业生信息" ,"浏览宿舍信息"};
+        string[] stu = new string[] { "新建住宿信息", "更新住宿信息", "删除住宿信息", "删除毕业生信息" ,"浏览宿舍信息","查询住宿信息"};
         public admin()
         {
             InitializeComponent();
@@ -66,7 +66,7 @@ namespace 宿舍管理系统_WPF
             else if (typebox.SelectedIndex == 1)
             {
                 infobox.Items.Clear();
-                for (int i = 0; i < 5; i++)
+                for (int i = 0; i < 6; i++)
                 {
                     infobox.Items.Add(stu[i]);//将内容设定为stu[i]的内容
                 }
@@ -111,6 +111,9 @@ namespace 宿舍管理系统_WPF
                         break;
                     case 4:
                         type = 7;
+                        break;
+                    case 5:
+                        type = 8;
                         break;
                 }
             }
@@ -178,6 +181,12 @@ namespace 宿舍管理系统_WPF
                     }
                     fs.Close();
                     break;
+                case 8:
+                    check newpage = new check();
+                    newpage.Show();
+                    this.Close();
+                    break;
+
             }
         }
     }

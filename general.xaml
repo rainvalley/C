@@ -20,6 +20,7 @@
         <TextBox Name="dorm_id" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Margin="530,70,0,0"/>
         <Button Name="dorm_id_submit" Content="提交" HorizontalAlignment="Left" Margin="541,127,0,0" VerticalAlignment="Top" Width="123" Click="Button_Click" Height="23"/>
         <TextBox Name="info" HorizontalAlignment="Left" Height="212" Margin="351,184,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="433" Foreground="Red" FontSize="20px" VerticalContentAlignment="Center"  BorderThickness="0" />
+        <Button Content="点击此处查询学生住宿信息" HorizontalAlignment="Left" Margin="26,368,0,0" VerticalAlignment="Top" Width="181" Height="28" Click="Button_Click_1"/>
 
     </Grid>
 </Window>
