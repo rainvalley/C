@@ -4,6 +4,7 @@
 #include<string.h>
 #include"general.h"
 #include"admin.h"
+#include"hash.h"
 
 //测试通过
 int Update_info(char* id,char* old_password,char* new_password) 
@@ -21,9 +22,9 @@ int Update_info(char* id,char* old_password,char* new_password)
 		{
 			fprintf(fp_temp, "%s %s %d\n", id_temp, password_temp, permission);
 		}
-		else if (strcmp(password_temp,old_password)==0)//当老密码正确时，更新密码
+		else if (strcmp(password_temp,hash(old_password))==0)//当老密码正确时，更新密码
 		{
-			fprintf(fp_temp, "%s %s %d\n", id_temp,new_password,permission);
+			fprintf(fp_temp, "%s %s %d\n", id_temp,hash(new_password),permission);
 			flag = 1;
 		}
 		else//当老密码不正确时，不改变原密码
