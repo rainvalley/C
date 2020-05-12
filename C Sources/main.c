@@ -109,19 +109,40 @@ void admin_model_user()
 		case 1:
 			printf("请输入需要创建的用户ID与密码\n");
 			scanf("%s %s", id, password);
-			Create_general_user(id, hash(password));
+			printf("");
+			if (Create_general_user(id, hash(password)))
+			{
+				printf("账户已创建，请注意妥善保管密码。\n");
+			}
+			else
+			{
+				printf("该账户已存在，创建失败，请尝试使用其他ID！\n");
+			}
 			break;
 		case 2:
-			Delete_general_user("2098");
 			printf("请输入需要删除的用户ID\n");
 			scanf("%s", id);
 			printf("%s", id);
-			Delete_general_user(id);
+			if (Delete_general_user(id))
+			{
+				printf("用户删除成功！\n");
+			}
+			else
+			{
+				printf("该用户不存在，请检查输入的用户ID！\n");
+			}
 			break;
 		case 3:
 			printf("请输入需要重置密码的用户ID\n");
 			scanf("%s", id);
-			Reset_password(id);
+			if (Reset_password(id))
+			{
+				printf("密码已成功重置为serdtijkhgf，请注意及时修改！\n");
+			}
+			else
+			{
+				printf("密码重置失败，请检查用户ID\n");
+			}
 			break;
 		case 4:
 			exit(0);
@@ -151,17 +172,38 @@ void admin_model_stu()
 		case 1:
 			printf("请输入需要创建的学生详细信息，包括学号，姓名，电话号码，宿舍号，床位号，寝室长学号，寝室长姓名，寝室长电话\n");
 			scanf("%s %s %s %s %s %s %s %s", stu.id, stu.name, stu.phone, stu.dorm_id, stu.bed_id, stu.head_id, stu.head_name, stu.head_phone);
-			Create_stu(stu);
+			if (Create_stu(stu))
+			{
+				printf("该学生住宿信息已创建\n");
+			}
+			else
+			{
+				printf("创建失败，请检查该学生的学号！\n");
+			}
 			break;
 		case 2:
 			printf("请输入需要更新的学生详细信息，包括学号，姓名，电话号码，宿舍号，床位号，寝室长学号，寝室长姓名，寝室长电话\n");
 			scanf("%s %s %s %s %s %s %s %s", stu.id, stu.name, stu.phone, stu.dorm_id, stu.bed_id, stu.head_id, stu.head_name, stu.head_phone);
-			Update_stu(stu);
+			if (Update_stu(stu))
+			{
+				printf("该学生信息已更新\n");
+			}
+			else
+			{
+				printf("该学生不存在，请检查输入的学号！\n");
+			}
 			break;
 		case 3:
 			printf("请输入需要删除的学生学号\n");
 			scanf("%s", id);
-			Delete_stu(id);
+			if (Delete_stu(id))
+			{
+				printf("该学生已删除\n");
+			}
+			else
+			{
+				printf("学生删除操作失败，请检查输入的学号！\n");
+			}
 			break;
 		case 4:
 			printf("请输入查询方法与相关信息：\n暂定四种查询方法：1-按宿舍号精确查找，2-按寝室长学号查找，3-按寝室长电话查找，4-按照学生本人学号查询\n");

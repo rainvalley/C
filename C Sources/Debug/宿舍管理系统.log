@@ -1,17 +1,13 @@
-﻿  admin.c
-C:\Users\HuYadong\source\repos\宿舍管理系统\宿舍管理系统\admin.c(104,47): warning C4013: “hash”未定义；假设外部返回 int
-C:\Users\HuYadong\source\repos\宿舍管理系统\宿舍管理系统\admin.c(104,21): warning C4477: “fprintf”: 格式字符串“%s”需要类型“char *”的参数，但可变参数 2 拥有了类型“int”
-  main.c
-C:\Users\HuYadong\source\repos\宿舍管理系统\宿舍管理系统\main.c(40,17): warning C4101: “stu”: 未引用的局部变量
-C:\Users\HuYadong\source\repos\宿舍管理系统\宿舍管理系统\main.c(169,10): warning C4477: “scanf”: 格式字符串“%s”需要类型“char *”的参数，但可变参数 2 拥有了类型“char **”
-C:\Users\HuYadong\source\repos\宿舍管理系统\宿舍管理系统\main.c(171,26): warning C4047: “函数”:“char *”与“char *[15]”的间接级别不同
-C:\Users\HuYadong\source\repos\宿舍管理系统\宿舍管理系统\main.c(171,26): warning C4024: “Query_stu”: 形参和实参 2 的类型不同
-C:\Users\HuYadong\source\repos\宿舍管理系统\宿舍管理系统\main.c(140,7): warning C4101: “password”: 未引用的局部变量
-C:\Users\HuYadong\source\repos\宿舍管理系统\宿舍管理系统\main.c(222,8): warning C4477: “scanf”: 格式字符串“%s”需要类型“char *”的参数，但可变参数 1 拥有了类型“char **”
-C:\Users\HuYadong\source\repos\宿舍管理系统\宿舍管理系统\main.c(222,8): warning C4477: “scanf”: 格式字符串“%s”需要类型“char *”的参数，但可变参数 2 拥有了类型“char **”
-C:\Users\HuYadong\source\repos\宿舍管理系统\宿舍管理系统\main.c(223,34): warning C4047: “函数”:“char *”与“char *[65]”的间接级别不同
-C:\Users\HuYadong\source\repos\宿舍管理系统\宿舍管理系统\main.c(223,34): warning C4024: “Update_info”: 形参和实参 2 的类型不同
-C:\Users\HuYadong\source\repos\宿舍管理系统\宿舍管理系统\main.c(223,48): warning C4047: “函数”:“char *”与“char *[65]”的间接级别不同
-C:\Users\HuYadong\source\repos\宿舍管理系统\宿舍管理系统\main.c(223,48): warning C4024: “Update_info”: 形参和实参 3 的类型不同
-  正在生成代码...
+﻿  main.c
+C:\Users\HuYadong\source\repos\宿舍管理系统\宿舍管理系统\main.c(44,17): warning C4101: “stu”: 未引用的局部变量
+C:\Users\HuYadong\source\repos\宿舍管理系统\宿舍管理系统\main.c(210,10): warning C4477: “scanf”: 格式字符串“%s”需要类型“char *”的参数，但可变参数 2 拥有了类型“char **”
+C:\Users\HuYadong\source\repos\宿舍管理系统\宿舍管理系统\main.c(212,26): warning C4047: “函数”:“char *”与“char *[15]”的间接级别不同
+C:\Users\HuYadong\source\repos\宿舍管理系统\宿舍管理系统\main.c(212,26): warning C4024: “Query_stu”: 形参和实参 2 的类型不同
+C:\Users\HuYadong\source\repos\宿舍管理系统\宿舍管理系统\main.c(160,7): warning C4101: “password”: 未引用的局部变量
+C:\Users\HuYadong\source\repos\宿舍管理系统\宿舍管理系统\main.c(263,8): warning C4477: “scanf”: 格式字符串“%s”需要类型“char *”的参数，但可变参数 1 拥有了类型“char **”
+C:\Users\HuYadong\source\repos\宿舍管理系统\宿舍管理系统\main.c(263,8): warning C4477: “scanf”: 格式字符串“%s”需要类型“char *”的参数，但可变参数 2 拥有了类型“char **”
+C:\Users\HuYadong\source\repos\宿舍管理系统\宿舍管理系统\main.c(264,34): warning C4047: “函数”:“char *”与“char *[65]”的间接级别不同
+C:\Users\HuYadong\source\repos\宿舍管理系统\宿舍管理系统\main.c(264,34): warning C4024: “Update_info”: 形参和实参 2 的类型不同
+C:\Users\HuYadong\source\repos\宿舍管理系统\宿舍管理系统\main.c(264,48): warning C4047: “函数”:“char *”与“char *[65]”的间接级别不同
+C:\Users\HuYadong\source\repos\宿舍管理系统\宿舍管理系统\main.c(264,48): warning C4024: “Update_info”: 形参和实参 3 的类型不同
   宿舍管理系统.vcxproj -> C:\Users\HuYadong\source\repos\宿舍管理系统\Debug\宿舍管理系统.exe

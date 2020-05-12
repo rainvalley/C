@@ -53,3 +53,17 @@ char id[15];
 char passwd[65];
 int permission;
 ```
+# 函数
+* int Check_permission(char* id, char* password,int type) 校验用户权限，不通过返回0，否则返回1。
+* int Create_general_user(char* id, char* password) 创建普通用户账号，若账号已存在返回0，创建成功返回1。
+* int Delete_general_user(char* id) 删除普通用户账号，若账号不存在返回0，否则删除成功返回1。
+* int Reset_password(char* id) 重置普通用户账号，若账号不存在则返回0，否则返回1。
+* int Create_stu(struct student stu) 创建学生住宿信息，若该学生已存在则返回0，否则返回1。
+* int Update_stu(struct student stu) 更新学生住宿信息，若该学生不存在则返回0，否则返回1。
+* int Delete_stu(char* id) 删除学生信息，若该学生不存在则返回0，否则返回1。
+* int Query_stu(int method, char* info) 查询学生住宿信息，查询不成功返回0，否则返回1。在C#调用此函数时，将控制流输出到log.txt。
+* void View_data() 在Console中打印全部学生的信息，无返回值。
+* int Update_info(char* id,char* old_password,char* new_password) 更改用户账号密码，当ID，旧密码正确且匹配时返回1，否则返回0。
+* void Check_dorm(char* dorm_id) 以宿舍号查询学生住宿信息，无返回值。
+* extern char* hash(const char* str) 用于计算密码的SHA-256值，返回值为SHA-256的字符串指针。
+

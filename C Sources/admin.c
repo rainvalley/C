@@ -15,6 +15,47 @@ struct student {
 	char head_phone[15];
 };
 
+//用于查询目标用户是否存在
+int Check_id(char* id)
+{
+	FILE* fp = fopen("user.txt", "r+");
+	int flag = 0;
+	char id_temp[15];
+	char password_temp[65];//暂存从文件中读取到的信息
+	int permission;
+	while (fscanf(fp, "%s %s %d", id_temp, password_temp, &permission) != -1)
+	{
+		if ((!strcmp(id, id_temp)))
+		{
+			flag = 1;//如果匹配到该ID，将标志值置为1
+		}
+	}
+	fclose(fp);
+	return flag;
+}
+
+int Check_stuid(char* stu_id)
+{
+	char id[15];
+	char name[5];
+	char phone[15];
+	char dorm_id[10];
+	char bed_id[2];
+	char head_id[15];
+	char head_name[5];
+	char head_phone[15];
+	int flag = 0;
+	FILE* fp = fopen("data.txt", "r+");
+	while (fscanf(fp, "%s %s %s %s %s %s %s %s", id,name, phone, dorm_id,bed_id,head_id, head_name, head_phone) != -1)
+	{
+		if (strcmp(id, stu_id) == 0)//当缓冲区学号与形参学号相同时，将更新的内容写入到fp_temp
+		{
+			flag = 1;
+		}
+	}
+	fclose(fp);
+	return flag;
+}
 
 //测试通过，建议添加密码重复输入，达到规定次数exit功能
 int Check_permission(char* id, char* password,int type)
@@ -44,12 +85,22 @@ int Check_permission(char* id, char* password,int type)
 
 
 //测试通过
-void Create_general_user(char* id, char* password)
+int Create_general_user(char* id, char* password)
 {
 	//创建普通用户
 	FILE* fp = fopen("user.txt", "a+");
-	fprintf(fp, "%s %s 1\n", id, hash(password));//创建普通用户时，权限默认设定为1
-	fclose(fp);
+	int flag=Check_id(id);
+	if (flag==0)
+	{
+		fprintf(fp, "%s %s 1\n", id, hash(password));//创建普通用户时，权限默认设定为1
+		fclose(fp);
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
+	
 }
 
 
@@ -79,17 +130,22 @@ int Delete_general_user(char* id)
 	fclose(fp_temp);//关闭文件
 	remove("user.txt");//删除源文件
 	rename("temp.txt", "user.txt");//将temp重命名为user
-	return errno;
+	return flag;
 }
 
 
 //测试通过（这个密码要不换长一点？
-void Reset_password(char* id)
+int Reset_password(char* id)
 {
 	//用于重置普通用户密码，默认密码为serdtijkhgf（这是我脸在键盘上滚出来的）
 	//实现方法参考Delete_general_user(char* id)函数
 	FILE* fp = fopen("user.txt", "r+");
 	FILE* fp_temp = fopen("temp.txt", "w+");
+	int flag = Check_id(id);
+	if (flag==0)
+	{
+		return 0;
+	}
 	char id_temp[15];
 	char password_temp[65];
 	int permission;
@@ -108,17 +164,22 @@ void Reset_password(char* id)
 	fclose(fp_temp);
 	remove("user.txt");
 	rename("temp.txt", "user.txt");
-	
+	return 1;
 }
 
 
 //测试通过
-void Create_stu(struct student stu)
+int Create_stu(struct student stu)
 {
 	//创建并写入学生信息
 	FILE* fp = fopen("data.txt", "a+");
+	if (Check_stuid(stu.id))
+	{
+		return 0;
+	}
 	fprintf(fp, "%s %s %s %s %s %s %s %s\n",stu.id,stu.name,stu.phone,stu.dorm_id,stu.bed_id,stu.head_id,stu.head_name,stu.head_phone );
 	fclose(fp);
+	return 1;
 }
 
 
@@ -152,7 +213,7 @@ int Update_stu(struct student stu)
 
 
 //测试通过
-void Delete_stu(char* id)
+int Delete_stu(char* id)
 {
 	//删除学生信息,如果该学生不存在则不改变原来信息
 	struct student {
@@ -165,6 +226,10 @@ void Delete_stu(char* id)
 		char head_name[5];
 		char head_phone[15];
 	};
+	if (!Check_stuid(id))
+	{
+		return 0;
+	}
 	struct student stu;
 	FILE* fp = fopen("data.txt", "r+");
 	FILE* fp_temp = fopen("temp.txt", "w+");
@@ -179,6 +244,7 @@ void Delete_stu(char* id)
 	fclose(fp_temp);
 	remove("data.txt");
 	rename("temp.txt", "data.txt");
+	return 1;
 }
 
 
