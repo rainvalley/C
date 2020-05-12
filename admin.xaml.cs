@@ -38,15 +38,14 @@ namespace 宿舍管理系统_WPF
         public static extern void Delete_stu(string id);
         [DllImport("sys.dll", CallingConvention = CallingConvention.Cdecl)]
         public static extern void Del_graduated(string year);
-
+        //导出C的DLL与函数
         string[] user=new string[] {"创建账号","删除账号","重置账号" };
         string[] stu = new string[] { "新建住宿信息", "更新住宿信息", "删除住宿信息", "删除毕业生信息" ,"浏览宿舍信息"};
         public admin()
         {
             InitializeComponent();
             typebox.Items.Add("用户信息");
-            typebox.Items.Add("学生住宿信息");
-            Create_stu("16234","Ya","12","A02S412","2","23456","Ya","199");
+            typebox.Items.Add("学生住宿信息");//初始化Combox内容
         }
 
         public static implicit operator admin(general v)
@@ -61,7 +60,7 @@ namespace 宿舍管理系统_WPF
                 infobox.Items.Clear();
                 for (int i = 0; i < 3; i++)
                 {
-                    infobox.Items.Add(user[i]);
+                    infobox.Items.Add(user[i]);//将typebox内容设定为user[i]的内容
                 }
             }
             else if (typebox.SelectedIndex == 1)
@@ -69,7 +68,7 @@ namespace 宿舍管理系统_WPF
                 infobox.Items.Clear();
                 for (int i = 0; i < 5; i++)
                 {
-                    infobox.Items.Add(stu[i]);
+                    infobox.Items.Add(stu[i]);//将内容设定为stu[i]的内容
                 }
             }
         }
@@ -80,17 +79,17 @@ namespace 宿舍管理系统_WPF
             {
                 if (infobox.SelectedIndex == 0)
                 {
-                    MessageBox.Show("请于右侧输入需要创建的用户ID与密码");
+                    info.Text= "请于右侧输入需要创建的用户ID与密码";
                     type = 0;
                 }
                 else if (infobox.SelectedIndex == 1)
                 {
-                    MessageBox.Show("请于右侧输入需要删除的用户ID");
+                    info.Text="请于右侧输入需要删除的用户ID";
                     type = 1;
                 }
                 else if (infobox.SelectedIndex == 2)
                 {
-                    MessageBox.Show("请于右侧输入需要重置密码的用户ID");
+                    info.Text = "请于右侧输入需要重置密码的用户ID";
                     type = 2;
                 }
             }
@@ -134,11 +133,11 @@ namespace 宿舍管理系统_WPF
             {
                 case 0:
                     Create_general_user(ID.Text, passwd.Text);
-                    MessageBox.Show("用户已创建");
+                    info.Text="用户已创建";
                     break;
                 case 1:
                     Delete_general_user(ID.Text);
-                    MessageBox.Show("用户已删除");
+                    info.Text="用户已删除";
                     break;
                 case 2:
                     Reset_password(ID.Text);
@@ -153,34 +152,30 @@ namespace 宿舍管理系统_WPF
             {
                 case 3:
                     Create_stu(id.Text,name.Text,phone.Text,dorm_id.Text,bed_id.Text,head_id.Text,head_name.Text,head_phone.Text);
-                    MessageBox.Show("该学生已创建");
+                    info.Text="该学生已创建";
                     break;
                 case 4:
                     Update_stu(id.Text, name.Text, phone.Text, dorm_id.Text, bed_id.Text, head_id.Text, head_name.Text, head_phone.Text);
-                    MessageBox.Show("该学生信息已修改");
+                    info.Text="该学生信息已修改";
                     break;
                 case 5:
                     Delete_stu(id.Text);
-                    MessageBox.Show("该学生已删除");
+                    info.Text = "该学生已删除";
                     break;
                 case 6:
                     Del_graduated(year.Text);
-                    MessageBox.Show("毕业生已删除");
+                    info.Text = "毕业生已删除";
                     break;
                 case 7:
-                    FileStream fs = new FileStream(@"data.txt", FileMode.Open, FileAccess.Read, FileShare.Read);
+                    info.Text = "学生住宿信息如下：\n";
+                    FileStream fs = new FileStream(@"data.txt", FileMode.Open, FileAccess.Read, FileShare.None);
                     StreamReader sr = new StreamReader(fs);
                     string line = sr.ReadLine();
                     while (line != null)
                     {
-                        MessageBox.Show(line);
+                        info.AppendText(line+"\n");
                         line = sr.ReadLine();
                     }
-                    /*string[] strs = str.Split(' ');
-                    foreach (string item in strs)
-                    {
-                        MessageBox.Show(item);
-                    }*/
                     fs.Close();
                     break;
             }

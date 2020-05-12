@@ -11,34 +11,33 @@
         <ComboBox Name="typebox" HorizontalAlignment="Left" Margin="24,77,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="typeboxchanged"/>
         <Label Content="选择您需要管理的具体信息：" HorizontalAlignment="Left" Margin="10,175,0,0" VerticalAlignment="Top" Width="301" FontSize="20px"/>
         <ComboBox Name="infobox" HorizontalAlignment="Left" Margin="24,288,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="infoboxchanged"/>
-        <TextBlock FontSize="15px" HorizontalAlignment="Left" Margin="497,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="111" Height="21"><Run Text="用户信息输入："/><LineBreak/><Run/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="387,81,0,0" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top" Height="17"/>
-        <TextBlock HorizontalAlignment="Left" Margin="538,79,0,0" TextWrapping="Wrap" Text="密码" VerticalAlignment="Top" RenderTransformOrigin="-0.175,0.604" Height="19"/>
-        <Button Name="user_submit" Content="提交" HorizontalAlignment="Left" Margin="709,79,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.96,0.734" Click="user_submit_Click"/>
-        <TextBox Name="ID" HorizontalAlignment="Left" Height="18" Margin="405,80,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
-        <TextBox Name="passwd" HorizontalAlignment="Left" Height="18" Margin="567,80,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="passwd_TextChanged"/>
-        <TextBlock FontSize="15px" HorizontalAlignment="Left" Margin="497,143,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="111" Height="21"><Run Text="学生"/><Run Text="信息输入："/><LineBreak/><Run/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="422,175,0,0" TextWrapping="Wrap" Text="学号" VerticalAlignment="Top" RenderTransformOrigin="-0.175,0.604" Height="19"/>
-        <TextBlock HorizontalAlignment="Left" Margin="599,175,0,0" TextWrapping="Wrap" Text="姓名" VerticalAlignment="Top" RenderTransformOrigin="-0.175,0.604" Height="19"/>
-        <TextBlock HorizontalAlignment="Left" Margin="386,297,0,0" TextWrapping="Wrap" Text="寝室长姓名" VerticalAlignment="Top" RenderTransformOrigin="-0.175,0.604" Height="19"/>
-        <TextBlock HorizontalAlignment="Left" Margin="410,255,0,0" TextWrapping="Wrap" Text="床位号" VerticalAlignment="Top" RenderTransformOrigin="-0.175,0.604" Height="19"/>
-        <TextBlock HorizontalAlignment="Left" Margin="398,213,0,0" TextWrapping="Wrap" Text="电话号码" VerticalAlignment="Top" RenderTransformOrigin="-0.175,0.604" Height="19"/>
-        <TextBlock HorizontalAlignment="Left" Margin="599,297,0,0" TextWrapping="Wrap" Text="寝室长电话" VerticalAlignment="Top" RenderTransformOrigin="-0.175,0.604" Height="19"/>
-        <TextBlock HorizontalAlignment="Left" Margin="599,255,0,0" TextWrapping="Wrap" Text="寝室长学号" VerticalAlignment="Top" RenderTransformOrigin="-0.175,0.604" Height="19"/>
-        <TextBlock HorizontalAlignment="Left" Margin="599,213,0,0" TextWrapping="Wrap" Text="宿舍号" VerticalAlignment="Top" RenderTransformOrigin="-0.175,0.604" Height="19"/>
-        <TextBox Name="id" HorizontalAlignment="Left" Height="23" Margin="461,175,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="649,171,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="649,171,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="name" HorizontalAlignment="Left" Height="23" Margin="649,171,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="phone" HorizontalAlignment="Left" Height="23" Margin="461,212,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="dorm_id" HorizontalAlignment="Left" Height="23" Margin="649,212,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="bed_id" HorizontalAlignment="Left" Height="23" Margin="461,251,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="head_id" HorizontalAlignment="Left" Height="23" Margin="664,251,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="head_name" HorizontalAlignment="Left" Height="23" Margin="461,296,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="head_phone" HorizontalAlignment="Left" Height="23" Margin="664,293,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.497,0.545"/>
-        <TextBox Name="year"  HorizontalAlignment="Left" Height="23" Margin="461,340,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button Name="stu_submit" Content="提交" HorizontalAlignment="Left" Margin="678,351,0,0" VerticalAlignment="Top" Width="75" Click="stu_submit_Click"/>
-        <TextBlock HorizontalAlignment="Left" Margin="386,340,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.175,0.604" Height="19"><Run Text="毕业生年份"/><LineBreak/><Run/></TextBlock>
+        <TextBlock FontSize="15px" HorizontalAlignment="Left" Margin="484,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="123" Height="23"><Run Text="用户信息输入："/><LineBreak/><Run/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="346,118,0,0" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top" Height="18" Width="13"/>
+        <TextBlock HorizontalAlignment="Left" Margin="513,116,0,0" TextWrapping="Wrap" Text="密码" VerticalAlignment="Top" RenderTransformOrigin="-0.175,0.604" Height="20" Width="27"/>
+        <Button Name="user_submit" Content="提交" HorizontalAlignment="Left" Margin="702,116,0,0" VerticalAlignment="Top" Width="83" RenderTransformOrigin="0.96,0.734" Click="user_submit_Click" Height="20"/>
+        <TextBox Name="ID" HorizontalAlignment="Left" Height="19" Margin="365,117,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="133" TextChanged="TextBox_TextChanged"/>
+        <TextBox Name="passwd" HorizontalAlignment="Left" Height="19" Margin="545,117,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="133" TextChanged="passwd_TextChanged"/>
+        <TextBlock FontSize="15px" HorizontalAlignment="Left" Margin="525,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="123" Height="23"><Run Text="学生"/><Run Text="信息输入："/><LineBreak/><Run/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="386,208,0,0" TextWrapping="Wrap" Text="学号" VerticalAlignment="Top" RenderTransformOrigin="-0.175,0.604" Height="21" Width="27"/>
+        <TextBlock HorizontalAlignment="Left" Margin="582,208,0,0" TextWrapping="Wrap" Text="姓名" VerticalAlignment="Top" RenderTransformOrigin="-0.175,0.604" Height="21" Width="26"/>
+        <TextBlock HorizontalAlignment="Left" Margin="346,340,0,0" TextWrapping="Wrap" Text="寝室长姓名" VerticalAlignment="Top" RenderTransformOrigin="-0.175,0.604" Height="21" Width="67"/>
+        <TextBlock HorizontalAlignment="Left" Margin="373,296,0,0" TextWrapping="Wrap" Text="床位号" VerticalAlignment="Top" RenderTransformOrigin="-0.175,0.604" Height="20" Width="40"/>
+        <TextBlock HorizontalAlignment="Left" Margin="360,248,0,0" TextWrapping="Wrap" Text="电话号码" VerticalAlignment="Top" RenderTransformOrigin="-0.175,0.604" Height="21" Width="53"/>
+        <TextBlock HorizontalAlignment="Left" Margin="582,340,0,0" TextWrapping="Wrap" Text="寝室长电话" VerticalAlignment="Top" RenderTransformOrigin="-0.175,0.604" Height="21" Width="66"/>
+        <TextBlock HorizontalAlignment="Left" Margin="582,295,0,0" TextWrapping="Wrap" Text="寝室长学号" VerticalAlignment="Top" RenderTransformOrigin="-0.175,0.604" Height="20" Width="66"/>
+        <TextBlock HorizontalAlignment="Left" Margin="582,249,0,0" TextWrapping="Wrap" Text="宿舍号" VerticalAlignment="Top" RenderTransformOrigin="-0.175,0.604" Height="21" Width="39"/>
+        <TextBox Name="id" HorizontalAlignment="Left" Height="25" Margin="429,208,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="133"/>
+        <TextBox Name="name" HorizontalAlignment="Left" Height="25" Margin="653,204,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="132" RenderTransformOrigin="0.485,0.496"/>
+        <TextBox Name="phone" HorizontalAlignment="Left" Height="25" Margin="429,248,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="133"/>
+        <TextBox Name="dorm_id" HorizontalAlignment="Left" Height="25" Margin="654,249,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="132"/>
+        <TextBox Name="bed_id" HorizontalAlignment="Left" Height="25" Margin="429,289,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="133"/>
+        <TextBox Name="head_id" HorizontalAlignment="Left" Height="25" Margin="653,289,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="133"/>
+        <TextBox Name="head_name" HorizontalAlignment="Left" Height="25" Margin="429,339,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="133"/>
+        <TextBox Name="head_phone" HorizontalAlignment="Left" Height="25" Margin="653,336,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="133" RenderTransformOrigin="0.497,0.545"/>
+        <TextBox Name="year"  HorizontalAlignment="Left" Height="24" Margin="429,387,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133"/>
+        <Button Name="stu_submit" Content="提交" HorizontalAlignment="Left" Margin="653,387,0,0" VerticalAlignment="Top" Width="83" Click="stu_submit_Click" Height="21"/>
+        <TextBlock HorizontalAlignment="Left" Margin="346,391,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.175,0.604" Height="20" Width="67"><Run Text="毕业生年份"/><LineBreak/><Run/></TextBlock>
+        <TextBox Name="info" HorizontalAlignment="Left" Height="62" Margin="314,0,-21.4,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="501" Foreground="Red" FontSize="20px" VerticalContentAlignment="Center"  BorderThickness="0" />
 
     </Grid>
 </Window>

@@ -27,5 +27,18 @@ namespace 宿舍管理系统_WPF
         {
             InitializeComponent();
         }
+
+        private void password_submit_Click(object sender, RoutedEventArgs e)
+        {
+            if(Update_info(id.Text,old_password.Text,new_password.Text)==1)
+            {
+                MessageBox.Show("密码已修改");
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
