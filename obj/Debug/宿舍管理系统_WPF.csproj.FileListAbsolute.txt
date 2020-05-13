@@ -12,7 +12,6 @@ C:\Users\HuYadong\source\repos\宿舍管理系统_WPF\宿舍管理系统_WPF\obj
 C:\Users\HuYadong\source\repos\宿舍管理系统_WPF\宿舍管理系统_WPF\obj\Debug\宿舍管理系统_WPF.csproj.CoreCompileInputs.cache
 C:\Users\HuYadong\source\repos\宿舍管理系统_WPF\宿舍管理系统_WPF\obj\Debug\宿舍管理系统_WPF.exe
 C:\Users\HuYadong\source\repos\宿舍管理系统_WPF\宿舍管理系统_WPF\obj\Debug\宿舍管理系统_WPF.pdb
-C:\Users\HuYadong\source\repos\宿舍管理系统_WPF\宿舍管理系统_WPF\obj\Debug\宿舍管理系统_WPF.csprojAssemblyReference.cache
 C:\Users\HuYadong\source\repos\宿舍管理系统_WPF\宿舍管理系统_WPF\obj\Debug\admin.g.cs
 C:\Users\HuYadong\source\repos\宿舍管理系统_WPF\宿舍管理系统_WPF\obj\Debug\general.g.cs
 C:\Users\HuYadong\source\repos\宿舍管理系统_WPF\宿舍管理系统_WPF\obj\Debug\admin.baml

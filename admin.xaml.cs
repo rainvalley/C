@@ -24,18 +24,18 @@ namespace 宿舍管理系统_WPF
         int type = 0;
 
         [DllImport("sys.dll", CallingConvention = CallingConvention.Cdecl)]
-        public static extern void Create_general_user(string id,string password);
+        public static extern int Create_general_user(string id,string password);
         [DllImport("sys.dll", CallingConvention = CallingConvention.Cdecl)]
         public static extern int Delete_general_user(string id);
         [DllImport("sys.dll", CallingConvention = CallingConvention.Cdecl)]
-        public static extern void Reset_password(string id);
+        public static extern int Reset_password(string id);
 
         [DllImport("sys.dll", CallingConvention = CallingConvention.Cdecl)]
-        public static extern void Create_stu(string id, string name, string phone, string dorm_id, string bed_id, string head_id, string head_name, string head_phone);
+        public static extern int Create_stu(string id, string name, string phone, string dorm_id, string bed_id, string head_id, string head_name, string head_phone);
         [DllImport("sys.dll", CallingConvention = CallingConvention.Cdecl)]
         public static extern int Update_stu(string id, string name, string phone,string dorm_id, string bed_id,string head_id, string head_name, string head_phone);
         [DllImport("sys.dll", CallingConvention = CallingConvention.Cdecl)]
-        public static extern void Delete_stu(string id);
+        public static extern int Delete_stu(string id);
         [DllImport("sys.dll", CallingConvention = CallingConvention.Cdecl)]
         public static extern void Del_graduated(string year);
         //导出C的DLL与函数
@@ -99,20 +99,26 @@ namespace 宿舍管理系统_WPF
                 {
                     case 0:
                         type = 3;
+                        info.Text = "请于右侧输入学生的详细住宿信息";
                         break;
                     case 1:
+                        info.Text = "请于右侧输入需要更新的学生信息";
                         type = 4;
                         break;
                     case 2:
+                        info.Text = "请于右侧输入需要删除的学生学号";
                         type = 5;
                         break;
                     case 3:
+                        info.Text = "请输入毕业生年份";
                         type = 6;
                         break;
                     case 4:
+                        info.Text = "按回车以浏览宿舍信息";
                         type = 7;
                         break;
                     case 5:
+                        info.Text = "按回车以查询住宿信息";
                         type = 8;
                         break;
                 }
@@ -135,16 +141,34 @@ namespace 宿舍管理系统_WPF
             switch(type)
             {
                 case 0:
-                    Create_general_user(ID.Text, passwd.Text);
-                    info.Text="用户已创建";
+                    if (Create_general_user(ID.Text, passwd.Text) == 1)
+                    {
+                        info.Text = "用户已创建";
+                    }
+                    else
+                    {
+                        MessageBox.Show("创建失败，该用户已存在");
+                    }
                     break;
                 case 1:
-                    Delete_general_user(ID.Text);
-                    info.Text="用户已删除";
+                    if( Delete_general_user(ID.Text) == 1)
+                    {
+                        info.Text="用户已删除";
+                    }
+                    else
+                    {
+                        MessageBox.Show("删除失败，该用户不存在");
+                    }
                     break;
                 case 2:
-                    Reset_password(ID.Text);
-                    MessageBox.Show("密码已被重置为serdtijkhgf，请注意及时修改。");
+                    if (Reset_password(ID.Text) == 1) 
+                    {
+                        MessageBox.Show("密码已被重置为serdtijkhgf，请注意及时修改。");
+                    }
+                    else
+                    {
+                        MessageBox.Show("重置失败，该用户不存在。");
+                    }
                     break;
             }
         }
@@ -154,16 +178,34 @@ namespace 宿舍管理系统_WPF
             switch(type)
             {
                 case 3:
-                    Create_stu(id.Text,name.Text,phone.Text,dorm_id.Text,bed_id.Text,head_id.Text,head_name.Text,head_phone.Text);
-                    info.Text="该学生已创建";
+                    if (Create_stu(id.Text, name.Text, phone.Text, dorm_id.Text, bed_id.Text, head_id.Text, head_name.Text, head_phone.Text) == 1)
+                    {
+                        info.Text = "该学生已创建";
+                    }
+                    else
+                    {
+                        MessageBox.Show("学生创建失败，该学号已存在");
+                    }
                     break;
                 case 4:
-                    Update_stu(id.Text, name.Text, phone.Text, dorm_id.Text, bed_id.Text, head_id.Text, head_name.Text, head_phone.Text);
-                    info.Text="该学生信息已修改";
+                    if (Update_stu(id.Text, name.Text, phone.Text, dorm_id.Text, bed_id.Text, head_id.Text, head_name.Text, head_phone.Text) == 1)
+                    {
+                        info.Text = "该学生信息已修改";
+                    }
+                    else
+                    {
+                        MessageBox.Show("学生住宿信息修改失败，请检查输入内容。");
+                    }
                     break;
                 case 5:
-                    Delete_stu(id.Text);
-                    info.Text = "该学生已删除";
+                    if (Delete_stu(id.Text) == 1)
+                    {
+                        info.Text = "该学生已删除";
+                    }
+                    else
+                    {
+                        MessageBox.Show("学生信息删除失败，请检查输入内容。");
+                    }
                     break;
                 case 6:
                     Del_graduated(year.Text);

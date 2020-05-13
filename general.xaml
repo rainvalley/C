@@ -8,6 +8,7 @@
         Title="用户页面" Height="450" Width="800" ResizeMode="NoResize">
     <Grid>
         <Label Content="更改账户密码" HorizontalAlignment="Left" Margin="62,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.547,-0.087" FontSize="20px" Width="169"/>
+        <TextBox Name="id" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="105,72,0,0"/>
         <TextBox Name="old_password" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="105,127,0,0"/>
         <TextBox Name="new_password" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="105,184,0,0"/>
         <Label Content="旧密码" HorizontalAlignment="Left" Margin="26,127,0,0" VerticalAlignment="Top"/>
@@ -15,7 +16,6 @@
         <Label Content="浏览宿舍入住情况" HorizontalAlignment="Left" Margin="455,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.547,-0.087" FontSize="20px" Width="188"/>
         <Button Name="password_submit" Content="提交" HorizontalAlignment="Left" Margin="62,265,0,0" VerticalAlignment="Top" Width="107" Height="23" Click="password_submit_Click"/>
         <Label x:Name="old_Copy" Content="用户ID" HorizontalAlignment="Left" Margin="26,70,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="id" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="105,72,0,0"/>
         <Label x:Name="old_Copy1" Content="宿舍号" HorizontalAlignment="Left" Margin="437,70,0,0" VerticalAlignment="Top" Width="51"/>
         <TextBox Name="dorm_id" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Margin="530,70,0,0"/>
         <Button Name="dorm_id_submit" Content="提交" HorizontalAlignment="Left" Margin="541,127,0,0" VerticalAlignment="Top" Width="123" Click="Button_Click" Height="23"/>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:宿舍管理系统_WPF"
         mc:Ignorable="d"
-        Title="管理员页面" Height="450" Width="800" ResizeMode="NoResize">
+        Title="管理员页面" Height="450" Width="824.4" ResizeMode="NoResize">
     <Grid>
         <Label Content="选择您需要管理的信息类型：" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="371" FontSize="20px"/>
         <ComboBox Name="typebox" HorizontalAlignment="Left" Margin="24,77,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="typeboxchanged"/>
@@ -35,7 +35,7 @@
         <TextBox Name="head_name" HorizontalAlignment="Left" Height="25" Margin="429,339,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="133"/>
         <TextBox Name="head_phone" HorizontalAlignment="Left" Height="25" Margin="653,336,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="133" RenderTransformOrigin="0.497,0.545"/>
         <TextBox Name="year"  HorizontalAlignment="Left" Height="24" Margin="429,387,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133"/>
-        <Button Name="stu_submit" Content="提交" HorizontalAlignment="Left" Margin="653,387,0,0" VerticalAlignment="Top" Width="83" Click="stu_submit_Click" Height="21"/>
+        <Button Name="stu_submit" Content="提交" HorizontalAlignment="Left" Margin="653,387,0,0" VerticalAlignment="Top" Width="83" Click="stu_submit_Click" Height="21" IsDefault="True"/>
         <TextBlock HorizontalAlignment="Left" Margin="346,391,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.175,0.604" Height="20" Width="67"><Run Text="毕业生年份"/><LineBreak/><Run/></TextBlock>
         <TextBox Name="info" HorizontalAlignment="Left" Height="62" Margin="314,0,-21.4,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="501" Foreground="Red" FontSize="20px" VerticalContentAlignment="Center"  BorderThickness="0" />
 
