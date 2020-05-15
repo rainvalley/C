@@ -1,3 +1,4 @@
+![宿舍管理系统](https://pic.rmb.bdstatic.com/bjh/8ae011a070681c37857347d4b731e640.png)
 ***C语言大作业——基于C/C#的WPF宿舍管理系统***
 >	2020.5.13第五版
 * 发布一版Release
